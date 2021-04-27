@@ -14,6 +14,9 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
 public interface ApiInterface {
+    /*
+    * HTTP REQUESTS TO THE API
+    * */
 
     @FormUrlEncoded
     @POST("/")

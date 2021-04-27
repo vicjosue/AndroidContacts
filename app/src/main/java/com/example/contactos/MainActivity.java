@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        apiInterface = ApiUtil.getAPI();
+        apiInterface = ApiUtil.getAPI(); // BUILD API INTERFACE
         list = findViewById(R.id.list);
         updateData();
         recyclerView = findViewById(R.id.recycler_view);
@@ -81,15 +81,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         updateData();
-/*
-        if (requestCode == INTENT_ADD && resultCode == RESULT_OK) {
-            //presenter.getData(); //reload data
-        }
-        else if (requestCode == INTENT_EDIT && resultCode == RESULT_OK) {
-            //presenter.getData(); //reload data
-        }
-*/
     }
+
     public void updateData(){
         arrayList = new ArrayList<>();
         apiInterface.getContacts().enqueue(new Callback<List<Contact>>(){
@@ -116,19 +109,5 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("API ERROR", "Unable to submit post to API.");
             }
         });
-    }
-    public void onGetResult(List<Contact> contacts) {
-        /*
-        adapter = new MainAdapter(this, notes, itemClickListener);
-        adapter.notifyDataSetChanged();
-        recyclerView.setAdapter(adapter);
-
-        note = notes;
-        */
-    }
-
-
-    public void onErrorLoading(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

@@ -149,7 +149,6 @@ public class EditorActivity extends AppCompatActivity {
                         }
                     });
                 }
-
                 return true;
 
             case R.id.delete:
@@ -188,27 +187,6 @@ public class EditorActivity extends AppCompatActivity {
         }
     }
 
-    public void showProgress() {
-        progressDialog.show();
-    }
-
-    public void hideProgress() {
-        progressDialog.hide();
-    }
-
-    public void onRequestSuccess(String message) {
-        Toast.makeText(EditorActivity.this,
-                message,
-                Toast.LENGTH_SHORT).show();
-        setResult(RESULT_OK);
-        finish(); //back to main activity
-    }
-
-    public void onRequestError(String message) {
-        Toast.makeText(EditorActivity.this,
-                message,
-                Toast.LENGTH_SHORT).show();
-    }
 
     private void setDataFromIntentExtra() {
 
